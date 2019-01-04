@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+    <title>Projects</title>
+    <meta charset='utf-8'>
+    <link rel='stylesheet' type="text/css" href='css/projectTemplate.css'>
+    <link rel='stylesheet' type="text/css" href='css/menu.css'>
+    <!--    ANIMATE LIBRARY-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css" integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw" crossorigin="anonymous">
+    <!--    JQUERY-->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.rawgit.com/tuupola/jquery_lazyload/07d121f8dfa7c83c8a2bb0767f5c77eaf60be54e/lazyload.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-beta.2/lazyload.js"></script>
+    <!--    ICONS-->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <!--         THIS IS THE META FOR IOS-->
+    <!--    <meta name="viewport" content="width=590">-->
+    
+</head>
+
+<body>
+    <div class="preload" id="preload"></div>
+    <div class="content" id='projectTemplate'>
+        <div class="secondMenu" id="secondMenu">
+            <input type="checkbox" />
+            <span class="menuBar"></span>
+            <span class="menuBar"></span>
+            <span class="menuBar"></span>
+        </div>
+        <div class='menu display' id="menu"></div>
+    </div>
+    <script src="js/projectTemplate.js"></script>
+    <script src="js/portfolioInfo.js"></script>
+    <script src="js/index.js"></script>
+
+    <script type='text/javascript'>
+        window.onload = detectarCarga;
+
+        function detectarCarga() {
+            setTimeout(function(){
+                document.getElementById("preload").style.opacity = "0";
+                document.getElementById("preload").style.zIndex = "0";
+            },500)
+        }
+    </script>
+    <!--
+    <script type='text/javascript'>
+        window.addEventListener("load", function(event) {
+            lazyload();
+        });
+    </script>
+-->
+</body>
+
+</html>

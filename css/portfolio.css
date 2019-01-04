@@ -1,0 +1,837 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    letter-spacing: 3px;
+    font-family: 'Lato', sans-serif;
+    ;
+}
+
+.preload {
+    width: 100%;
+    height: 100vh;
+    background: black;
+    position: fixed;
+    z-index: 999999;
+    opacity: 1;
+    transition: .5s all;
+}
+
+.secondMenu input {
+    display: block;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    top: -7px;
+    left: -5px;
+    cursor: pointer;
+    opacity: 0;
+    /* hide this */
+    z-index: 2;
+    /* and place it over the hamburger */
+    -webkit-touch-callout: none;
+}
+
+.secondMenu {
+    position: fixed;
+    top: 50px;
+    right: 50px;
+    z-index: 9999;
+}
+
+.secondMenu span {
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    background: black;
+    border-radius: 3px;
+    z-index: 1;
+    transform-origin: 4px 0px;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+    opacity 0.55s ease;
+}
+
+.secondMenu span:first-child {
+    transform-origin: 0% 0%;
+}
+
+.secondMenu span:nth-last-child(2) {
+    transform-origin: 0% 100%;
+}
+
+.secondMenu input:checked ~ span {
+    opacity: 1;
+    transform: rotate(45deg) translate(-2px, -1px);
+    background: white;
+}
+
+.secondMenu input:checked ~ span:nth-last-child(1) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+.secondMenu input:checked ~ span:nth-last-child(2) {
+    transform: rotate(-45deg) translate(0, -1px);
+}
+
+
+
+/*RESPONSIVE from 0px to 767px*/
+
+@media only screen and (max-width:767px) {
+
+    .portfolioSection {
+        display: flex;
+        height: auto;
+        width: 100%;
+        /*
+    background-image: url(../img/mike1.png);
+    filter: brightness(.6);
+    -webkit-filter: brightness(.6);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: cover;
+*/
+        background: white;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .background {
+        position: fixed;
+        top: 0px;
+        width: 100%;
+        height: 500px;
+        background: transparent;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .background div {
+        height: 100%;
+        width: 10%;
+        border-right: 1px solid rgba(0, 0, 0, .1);
+    }
+
+    .background .mike {
+        position: absolute;
+        border-right: 0px;
+        height: 100%;
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        transition: 2s all;
+    }
+
+    .background .mike h1 {
+        width: 100%;
+        color: black;
+        text-align: left;
+        padding: 20px;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 20px;
+        text-shadow: 1px 1px 1px black;
+        font-size: 1.5em;
+    }
+
+    .background .mike p {
+        width: 100%;
+        color: #555;
+        text-align: left;
+        padding: 0px 50px;
+        line-height: 30px;
+        font-size: .8em;
+    }
+
+    .toggleInverse {
+        color: white;
+        transition: .5s all;
+    }
+
+    .title {
+        display: flex;
+        height: 500px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 60%;
+        z-index: 100;
+    }
+
+    /*
+.title h1{
+    width: 100%;
+    color: black;
+    text-align: left;
+    padding: 50px;
+    text-transform: uppercase;
+    letter-spacing: 20px;
+    font-size: 3em;
+}
+
+.title p{
+    width: 100%;
+    color: #555;
+    text-align: left;
+    padding: 0px 50px;
+    line-height: 30px;
+    font-size: .8em;
+}
+*/
+    .portfolio {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .link {
+        width: 100%;
+        height: 180px;
+        text-decoration: none;
+    }
+
+    .projectDiv {
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        border: 1px solid #555;
+        border-left: 0px;
+        border-right: 0px;
+        cursor: pointer;
+    }
+    .projectDiv a {
+        width: 100%;
+        height: 100%;
+    }
+
+    .mainDiv {
+        background: transparent;
+        width: 70%;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: .5s all;
+        z-index: 3;
+        opacity:1;
+    }
+
+    .mainDivFadeIn {
+        opacity: 1;
+        transition: .5s all;
+    }
+
+    .projectName {
+        width: 80%;
+        font-size: 1em;
+        text-transform: uppercase;
+    }
+
+    .jobType {
+        width: 80%;
+        color: #555;
+        margin-top: 20px;
+        padding-left: 30px;
+        font-size: .8em;
+        transition: .5s all;
+    }
+
+    .secondDiv {
+        background: transparent;
+        width: 30%;
+        display: flex;
+        color: white;
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 2em;
+        justify-content: center;
+        z-index: 3;
+        opacity: 1;
+        transition: 1.5s all;
+    }
+
+    .secondDiv p {
+        padding: 20px;
+    }
+
+    .picture {
+        position: absolute;
+        width: 0%;
+        height: 100%;
+        background: white;
+        filter: brightness(.6);
+        -webkit-filter: brightness(.8);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: auto;
+        transition: 1.5s all;
+        z-index: 2;
+    }
+
+    .projectDiv:hover .picture {
+        width: 0%;
+        transition: .5s all;
+        z-index: 2;
+    }
+
+    .projectDiv:hover .mainDiv {
+        padding-left: 0px;
+        transition: .5s all;
+        z-index: 2;
+        color: #555;
+    }
+
+    .projectDiv:hover .secondDiv {
+        padding-left: 0px;
+        transition: .5s all;
+        opacity: 1;
+        z-index: 2;
+        color: white;
+    }
+
+    .projectDiv:hover .mainDiv .jobType {
+        padding-left: 0px;
+        transition: .5s all;
+        color: white;
+    }
+
+    /*BACKGROUND IMAGES*/
+    #lowpoly {
+        background-image: url(../img/lowpolyProject.png);
+    }
+
+    #personalBrand {
+        background-image: url(../img/personalBrand.png);
+    }
+
+    #barbersTemplate {
+        background-image: url(../img/barbersTemplate.jpg);
+    }
+
+    #spaDesign {
+        background-image: url(../img/spaDesign.jpg);
+    }
+
+    #Modeling {
+        background-image: url(../img/college2.jpg);
+    }
+}
+
+/*----------------------------------------------------------------------------------*/
+
+/*RESPONSIVE from 768px to 1250px*/
+
+@media only screen and (min-width:768px) {
+
+    .portfolioSection {
+        display: flex;
+        height: auto;
+        width: 100%;
+        /*
+    background-image: url(../img/mike1.png);
+    filter: brightness(.6);
+    -webkit-filter: brightness(.6);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: cover;
+*/
+        background: ;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .background {
+        position: fixed;
+        top: 0px;
+        width: 100%;
+        height: 500px;
+        background: transparent;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .background div {
+        height: 100%;
+        width: 10%;
+        border-right: 1px solid rgba(0, 0, 0, .1);
+    }
+
+    .background .mike {
+        position: absolute;
+        border-right: 0px;
+        height: 100%;
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        transition: 2s all;
+    }
+
+    .background .mike h1 {
+        width: 100%;
+        color: black;
+        text-align: left;
+        padding: 50px;
+        text-transform: uppercase;
+        letter-spacing: 20px;
+        text-shadow: 1px 1px 1px black;
+        font-size: 2.5em;
+    }
+
+    .background .mike p {
+        width: 100%;
+        color: #555;
+        text-align: left;
+        padding: 0px 50px;
+        line-height: 30px;
+        font-size: .8em;
+    }
+
+    .toggleInverse {
+        color: white;
+        transition: .5s all;
+    }
+
+    .title {
+        display: flex;
+        height: 500px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 60%;
+        z-index: 100;
+    }
+
+    /*
+.title h1{
+    width: 100%;
+    color: black;
+    text-align: left;
+    padding: 50px;
+    text-transform: uppercase;
+    letter-spacing: 20px;
+    font-size: 3em;
+}
+
+.title p{
+    width: 100%;
+    color: #555;
+    text-align: left;
+    padding: 0px 50px;
+    line-height: 30px;
+    font-size: .8em;
+}
+*/
+    .portfolio {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .link {
+        width: 100%;
+        height: 200px;
+        text-decoration: none;
+    }
+
+    .projectDiv {
+        width: 100%;
+        height: 200px;
+        background-color: black;
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        border: 1px solid #555;
+        border-left: 0px;
+        border-right: 0px;
+        cursor: pointer;
+    }
+    .projectDiv a {
+        width: 100%;
+        height: 100%;
+    }
+
+    .mainDiv {
+        background: transparent;
+        width: 70%;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: .5s all;
+        z-index: 3;
+        opacity: 1;
+    }
+
+    .mainDivFadeIn {
+        opacity: 1;
+        transition: .5s all;
+    }
+
+    .projectName {
+        width: 50%;
+        font-size: 1.1em;
+        text-transform: uppercase;
+    }
+
+    .jobType {
+        width: 50%;
+        color: #555;
+        margin-top: 20px;
+        font-size: .8em;
+        transition: .5s all;
+    }
+
+    .secondDiv {
+        background: transparent;
+        width: 30%;
+        display: flex;
+        color: white;
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 2em;
+        justify-content: center;
+        z-index: 3;
+        opacity: 0;
+        transition: 1.5s all;
+    }
+
+    .secondDiv p {
+        padding: 20px;
+    }
+
+    .picture {
+        position: absolute;
+        width: 0%;
+        height: 100%;
+        background: white;
+        filter: brightness(.6);
+        -webkit-filter: brightness(.8);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: auto;
+        transition: 1.5s all;
+        z-index: 2;
+    }
+
+    .projectDiv:hover .picture {
+        width: 0%;
+        transition: .5s all;
+        z-index: 2;
+    }
+
+    .projectDiv:hover .mainDiv {
+        padding-left: 100px;
+        transition: .5s all;
+        z-index: 2;
+        color: #555;
+    }
+
+    .projectDiv:hover .secondDiv {
+        padding-left: 100px;
+        transition: .5s all;
+        opacity: 1;
+        z-index: 2;
+        color: white;
+    }
+
+    .projectDiv:hover .mainDiv .jobType {
+        padding-left: 50px;
+        transition: .5s all;
+        color: white;
+    }
+
+    /*BACKGROUND IMAGES*/
+    #lowpoly {
+        background-image: url(../img/lowpolyProject.png);
+    }
+
+    #personalBrand {
+        background-image: url(../img/personalBrand.png);
+    }
+
+    #barbersTemplate {
+        background-image: url(../img/barbersTemplate.jpg);
+    }
+
+    #spaDesign {
+        background-image: url(../img/spaDesign.jpg);
+    }
+
+    #Modeling {
+        background-image: url(../img/college2.jpg);
+    }
+
+}
+
+/*----------------------------------------------------------------------------------*/
+
+/*RESPONSIVE from 1250px*/
+
+@media only screen and (min-width:1250px) {
+
+    .portfolioSection {
+        display: flex;
+        height: auto;
+        width: 100%;
+        /*
+    background-image: url(../img/mike1.png);
+    filter: brightness(.6);
+    -webkit-filter: brightness(.6);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: cover;
+*/
+        background: white;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .background {
+        position: fixed;
+        top: 0px;
+        width: 100%;
+        height: 500px;
+        background: transparent;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .background div {
+        height: 100%;
+        width: 10%;
+        border-right: 1px solid rgba(0, 0, 0, .1);
+    }
+
+    .background .mike {
+        position: absolute;
+        border-right: 0px;
+        height: 100%;
+        width: 60%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        transition: 2s all;
+    }
+
+    .background .mike h1 {
+        width: 100%;
+        color: black;
+        text-align: left;
+        padding: 50px;
+        text-transform: uppercase;
+        letter-spacing: 20px;
+        text-shadow: 1px 1px 1px black;
+        font-size: 3em;
+    }
+
+    .background .mike p {
+        width: 100%;
+        color: #555;
+        text-align: left;
+        padding: 0px 50px;
+        line-height: 30px;
+        font-size: .8em;
+    }
+
+    .toggleInverse {
+        color: white;
+        transition: .5s all;
+    }
+
+    .title {
+        display: flex;
+        height: 500px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 60%;
+        z-index: 100;
+    }
+
+    /*
+.title h1{
+    width: 100%;
+    color: black;
+    text-align: left;
+    padding: 50px;
+    text-transform: uppercase;
+    letter-spacing: 20px;
+    font-size: 3em;
+}
+
+.title p{
+    width: 100%;
+    color: #555;
+    text-align: left;
+    padding: 0px 50px;
+    line-height: 30px;
+    font-size: .8em;
+}
+*/
+    .portfolio {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .link {
+        width: 100%;
+        height: 250px;
+        text-decoration: none;
+    }
+
+    .projectDiv {
+        width: 100%;
+        height: 250px;
+        background-color: black;
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        border: 1px solid #555;
+        border-left: 0px;
+        border-right: 0px;
+        cursor: pointer;
+    }
+    .projectDiv a {
+        width: 100%;
+        height: 100%;
+    }
+
+    .mainDiv {
+        background: transparent;
+        width: 70%;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: .5s all;
+        z-index: 3;
+        opacity: 1;
+    }
+
+    .mainDivFadeIn {
+        opacity: 1;
+        transition: .5s all;
+    }
+
+    .projectName {
+        width: 50%;
+        font-size: 1.1em;
+        text-transform: uppercase;
+    }
+
+    .jobType {
+        width: 50%;
+        color: #555;
+        margin-top: 20px;
+        font-size: .8em;
+        transition: .5s all;
+    }
+
+    .secondDiv {
+        background: transparent;
+        width: 30%;
+        display: flex;
+        color: white;
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 2em;
+        justify-content: center;
+        z-index: 3;
+        opacity: 0;
+        transition: 1.5s all;
+    }
+
+    .secondDiv p {
+        padding: 20px;
+    }
+
+    .picture {
+        position: absolute;
+        width: 0%;
+        height: 100%;
+        background: white;
+        filter: brightness(.6);
+        -webkit-filter: brightness(.8);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: auto;
+        transition: 1.5s all;
+        z-index: 2;
+    }
+
+    .projectDiv:hover .picture {
+        width: 100%;
+        transition: .5s all;
+        z-index: 2;
+    }
+
+    .projectDiv:hover .mainDiv {
+        padding-left: 100px;
+        transition: .5s all;
+        z-index: 2;
+        color: #555;
+    }
+
+    .projectDiv:hover .secondDiv {
+        padding-left: 100px;
+        transition: .5s all;
+        opacity: 1;
+        z-index: 2;
+        color: white;
+    }
+
+    .projectDiv:hover .mainDiv .jobType {
+        padding-left: 50px;
+        transition: .5s all;
+        color: white;
+    }
+
+    /*BACKGROUND IMAGES*/
+    #lowpoly {
+        background-image: url(../img/lowpolyProject.png);
+    }
+
+    #personalBrand {
+        background-image: url(../img/personalBrand.png);
+    }
+
+    #barbersTemplate {
+        background-image: url(../img/barbersTemplate.jpg);
+    }
+
+    #spaDesign {
+        background-image: url(../img/spaDesign.jpg);
+    }
+
+    #Modeling {
+        background-image: url(../img/college2.jpg);
+    }
+
+}

@@ -1,0 +1,547 @@
+@media only screen and (max-width:1399px) {
+    .menu {
+        height: 100vh;
+        width: 100%;
+        background: black;
+        position: absolute;
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .menu div {
+        width: 25%;
+    }
+
+    .menu div:last-child {
+        border-right: 0px solid gray;
+    }
+
+    .contactDiv {
+        height: 10%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column
+    }
+
+    .contactDiv .contactDivInfo {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        color: white;
+        align-items: center;
+        border: 0px;
+    }
+
+    .contactDiv .socialNetworks {
+        height: 10%;
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        flex-direction: row;
+        color: white;
+        border: 0px;
+    }
+
+    .socialNetworks .linkedIn {
+        height: 70px;
+        width: 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px;
+        margin-bottom: 50px;
+    }
+    
+      .socialNetworks .linkedIn a {
+        color: white;
+    }
+
+    .socialNetworks .instagram {
+        height: 70px;
+        width: 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px;
+        margin-bottom: 50px;
+    }
+    
+      .socialNetworks .instagram a {
+        color: white;
+    }
+
+    .socialNetworks div {
+        border: 0px;
+    }
+
+    .menuList {
+        width: 100%;
+        height: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menuList ul {
+        padding: 20px;
+    }
+
+    .menuList ul li {
+        padding: 20px;
+        margin-top: 50px;
+    }
+
+    .menuList ul li:first-child {
+        margin-top: 0px;
+    }
+
+    .menuList ul li a {
+        text-decoration: none;
+        padding: 20px;
+        font-size: 1.2em;
+        color: white;
+        transition: 1s all;
+    }
+
+    .menuList ul li a:hover {
+        transition: 1s all;
+        text-decoration: none;
+        color: white;
+    }
+
+    .quote {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+    }
+
+    .quote .form {
+        border-right: 0px;
+        position: absolute;
+        border: 0px;
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        transition: .5s all;
+        display: none;
+    }
+
+    .formVisible {
+        display: visible;
+        transition: .5s all;
+    }
+
+    .quote .form div {
+        height: 200px;
+        width: 50%;
+        border-right: 1px solid;
+        color: white;
+        margin-top: 30px;
+    }
+
+    .quote .form .before {
+        margin-top: -400px;
+        position: absolute;
+    }
+
+    .quote .form .after {
+        margin-top: 550px;
+        position: absolute;
+    }
+
+    .quote .form input {
+        padding: 15px;
+        margin-top: 30px;
+        background: transparent;
+        border: 0px;
+        border-bottom: 1px solid #555;
+        color: white;
+        transition: .5s all;
+    }
+
+    .quote .form input:first-child {
+        padding: 15px;
+        margin-top: 0px;
+    }
+
+    .quote .form input:placeholder-shown {
+        text-transform: uppercase;
+        letter-spacing: 7px;
+        font-size: .7em;
+    }
+
+    .quote .form textarea {
+        padding: 15px;
+        margin-top: 30px;
+        background: transparent;
+        border: 0px;
+        border-bottom: 1px solid #555;
+        height: 200px;
+        color: white;
+        line-height: 30px;
+        transition: .5s all;
+    }
+
+    .quote .form textarea:placeholder-shown {
+        text-transform: uppercase;
+        letter-spacing: 7px;
+        font-size: .7em;
+    }
+
+    .quote .form input:focus {
+        outline: 0px;
+    }
+
+    .quote .form textarea:focus {
+        outline: 0px;
+    }
+
+    .byebyeQuote {
+        margin-top: 1450px;
+        transition: .5s all;
+        filter: brightness(1);
+        -webkit-filter: brightness(.5);
+    }
+
+    .quote #quote {
+        width: 80%;
+        height: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        transition: .5s all;
+    }
+
+    .quote div p {
+        transform: rotate(90deg);
+        line-height: 30px;
+        height: auto;
+        width: 130%;
+        border-left: 1px solid white;
+        padding: 10px;
+        padding-left: 20px;
+        position: absolute;
+        font-size: .8em;
+        transition: .5s all;
+        color: white;
+    }
+
+
+    .M {
+        height: 100%;
+        width: 100%;
+        display: none;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .M .contactDivInfo h2 {
+        color: white;
+        font-size: 6em;
+        padding: 10px;
+        margin-top: 50px;
+    }
+
+}
+
+/*----------------------------------------------------------------------------------*/
+
+/*RESPONSIVE from 0px to 819px*/
+
+@media only screen and (min-width:1340px) {
+
+    .menu {
+        height: 100vh;
+        width: 100%;
+        background: black;
+        position: absolute;
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        overflow: hidden;
+    }
+
+    .menu div {
+        width: 25%;
+        height: 100%;
+        border-right: 1px solid gray;
+    }
+
+    .menu div:last-child {
+        border-right: 0px solid gray;
+    }
+
+    .contactDiv {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column
+    }
+
+    .contactDiv .contactDivInfo {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        color: white;
+        align-items: center;
+        border: 0px;
+    }
+
+    .contactDiv .socialNetworks {
+        height: 100%;
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        flex-direction: row;
+        color: white;
+        border: 0px;
+    }
+
+    .socialNetworks .linkedIn {
+        height: 70px;
+        width: 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px;
+        margin-bottom: 50px;
+    }
+    
+    .socialNetworks .linkedIn a {
+        color: white;
+    }
+
+    .socialNetworks .instagram {
+        height: 70px;
+        width: 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px;
+        margin-bottom: 50px;
+    }
+    
+    .socialNetworks .instagram a {
+        color: white;
+    }
+
+    .socialNetworks div {
+        border: 0px;
+    }
+
+    .menuList {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menuList ul {
+        padding: 20px;
+    }
+
+    .menuList ul li {
+        padding: 20px;
+        margin-top: 50px;
+    }
+
+    .menuList ul li:first-child {
+        margin-top: 0px;
+    }
+
+    .menuList ul li a {
+        text-decoration: none;
+        padding: 20px;
+        color: white;
+        transition: 1s all;
+    }
+
+    .menuList ul li a:hover {
+        transition: 1s all;
+        text-decoration: line-through;
+        color: white;
+    }
+
+    .quote {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+    }
+
+    .quote .form {
+        border-right: 0px;
+        position: absolute;
+        border: 0px;
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        transition: .5s all;
+        opacity: 0;
+    }
+
+    .formVisible {
+        display: visible;
+        transition: .5s all;
+    }
+
+    .quote .form div {
+        height: 200px;
+        width: 50%;
+        border-right: 1px solid;
+        color: white;
+        margin-top: 30px;
+    }
+
+    .quote .form .before {
+        margin-top: -400px;
+        position: absolute;
+    }
+
+    .quote .form .after {
+        margin-top: 440px;
+        position: absolute;
+    }
+
+    .quote .form input {
+        padding: 15px;
+        margin-top: 30px;
+        background: transparent;
+        border: 0px;
+        border-bottom: 1px solid #555;
+        color: white;
+        transition: .5s all;
+    }
+
+    .quote .form input:first-child {
+        padding: 15px;
+        margin-top: 0px;
+    }
+    
+    .sendMessage {
+        padding: 15px;
+        margin-top: 20px;
+        background: whitesmoke !important;
+        color: black !important;
+        font-weight: bold;
+        cursor: pointer;
+        border: 1px solid #555 !important;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        transition: .5s all;
+        border-radius: 5px;
+    }
+    
+    .sendMessage:hover {
+        background: black !important;
+        color: white !important;
+        transition: .5s all;
+    }
+
+    .quote .form input:placeholder-shown {
+        text-transform: uppercase;
+        letter-spacing: 7px;
+        font-size: .7em;
+    }
+
+    .quote .form textarea {
+        padding: 15px;
+        margin-top: 30px;
+        background: transparent;
+        border: 0px;
+        border-bottom: 1px solid #555;
+        height: 200px;
+        color: white;
+        line-height: 30px;
+        transition: .5s all;
+    }
+
+    .quote .form textarea:placeholder-shown {
+        text-transform: uppercase;
+        letter-spacing: 7px;
+        font-size: .7em;
+    }
+
+    .quote .form input:focus {
+        outline: 0px;
+    }
+
+    .quote .form textarea:focus {
+        outline: 0px;
+    }
+
+    .byebyeQuote {
+        margin-top: 1450px;
+        transition: .5s all;
+        filter: brightness(1);
+        -webkit-filter: brightness(.5);
+    }
+
+    .quote #quote {
+        width: 80%;
+        height: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        transition: .5s all;
+    }
+
+    .quote div p {
+        transform: rotate(90deg);
+        line-height: 30px;
+        height: auto;
+        width: 130%;
+        border-left: 1px solid white;
+        padding: 10px;
+        padding-left: 20px;
+        position: absolute;
+        font-size: .8em;
+        transition: .5s all;
+        color: white;
+    }
+
+
+    .M {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .M .contactDivInfo a {
+        text-decoration: none;
+    }
+    
+    .M .contactDivInfo h2 {
+        color: white;
+        font-size: 6em;
+        padding: 10px;
+        margin-top: 50px;
+    }
+
+}

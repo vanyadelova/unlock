@@ -1,0 +1,2587 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    letter-spacing: 3px;
+    font-family: 'Lato', sans-serif;
+    ;
+}
+
+.preload{
+        width: 100%;
+        height: 100vh;
+        background: black;
+        position: fixed;
+        z-index: 999999;
+        opacity: 1;
+        transition: .5s all;
+    }
+
+.secondMenu input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  cursor: pointer;
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+  
+  -webkit-touch-callout: none;
+}
+
+.secondMenu {
+    position: fixed;
+    top: 50px;
+    right: 50px;
+    z-index: 9999;
+}
+
+.secondMenu span{
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    background: white;
+    border-radius: 3px;
+    z-index: 1;
+    transform-origin: 4px 0px;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+    opacity 0.55s ease;
+}
+
+.secondMenu span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+.secondMenu span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+.secondMenu input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: white;
+}
+
+.secondMenu input:checked ~ span:nth-last-child(1)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+.secondMenu input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+
+/*RESPONSIVE from 0px to 819px*/
+
+@media only screen and (max-width:819px) {
+
+    /*ABOUT SECTION*/
+    body {
+        overflow-x: hidden;
+    }
+
+    .aboutSection {
+        width: 100%;
+        background: #191c1e;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /*ABOUT ME SECTION*/
+    .parallax-mirror {
+        width: 100%;
+        transform: translate3d(none);
+        height: 100vh;
+    }
+
+    .parallax-slider {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+    }
+
+    .aboutName {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .myName {
+        width: 100%;
+        height: 100%;
+        background: #191c1e;
+        color: white;
+        display: flex;
+        /*    padding-left: 100px;*/
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border-bottom: 1px solid #555;
+    }
+
+    #particles-js {
+        width: 100%;
+        height: 30%;
+        display: none;
+    }
+
+    .myName p {
+        width: 90%;
+        font-size: 1.2em;
+        color: #555;
+    }
+
+    .myName p:nth-child(2) {
+        font-size: 1.6em;
+        text-shadow: 1px 1px 1px white;
+        text-transform: uppercase;
+        color: white;
+    }
+
+    .myName span {
+        text-decoration: line-through;
+    }
+
+    .myName span:last-child {
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: white;
+        text-shadow: 1px 1px 1px white;
+    }
+
+    /*LENGUAGES SECTION*/
+    .lenguages {
+        background: #1a1e22;
+        /*    background: red;*/
+        background-attachment: fixed;
+        height: auto;
+        padding: 50px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        z-index: 100;
+        box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, .2);
+    }
+
+    .socratisQuote {
+        color: #555;
+        width: 100%;
+        padding: 0px;
+        font-size: 1.5em;
+        line-height: 30px;
+        opacity: 0;
+        transition: 1.2s all;
+        transform: translateY(50px);
+    }
+
+    .socratisQuoteFadeIn {
+        opacity: 1;
+        transition: 1.2s all;
+        transform: translateY(0px);
+    }
+
+    .socratis {
+        color: rgba(85, 85, 85, .05);
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        letter-spacing: 20px;
+        position: absolute;
+        text-transform: uppercase;
+        z-index: 2;
+        display: none:
+    }
+
+    .socratis p {
+        font-size: 19em;
+        color: rgba(85, 85, 85, .05);
+        font-style: italic;
+    }
+
+    .lenguages p span {
+        color: white;
+        text-decoration: line-through;
+    }
+
+    .allLenguages {
+        width: 100%;
+        margin-top: 50px;
+        padding: 10px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        z-index: 3;
+    }
+
+    .allLenguages div {
+        width: 33.3%;
+        height: 100px;
+        padding: 30px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .allLenguages div i {
+        font-size: 3em;
+        color: #555;
+        transition: .5s all;
+        z-index: 2;
+    }
+
+    .allLenguages div p {
+        font-size: 1em;
+        color: rgba(255, 255, 255, .1);
+        margin-top: 20px;
+        z-index: 1;
+        font-size: 1em;
+        opacity: 0;
+        font-weight: bold;
+        letter-spacing: 10px;
+        /*    position: absolute;*/
+        text-transform: uppercase;
+        transition: .5s all;
+        display: none;
+    }
+
+    .lenguageopacity {
+        opacity: 1;
+        transition: .5s all;
+    }
+
+    .allLenguages div:hover i {
+        color: white;
+        transition: .5s all;
+
+    }
+
+    /*SKILLS SECTION*/
+    .skills {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: #1a1e22;
+        color: white;
+        z-index: 101;
+        transition: 3s all;
+    }
+
+    .skillsFadeIn {
+        background: #191c1e;
+        transition: 3s all;
+        box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, .5);
+    }
+
+    .skillsTitle {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        padding-top: 40px;
+    }
+
+    .skillsTitle h2 {
+        font-size: 2em;
+        text-transform: uppercase;
+        letter-spacing: 10px;
+        padding: 10px;
+        font-weight: 100;
+        text-shadow: 1px 1px 1px white;
+    }
+
+    .skillsTitle p {
+        font-size: .6em;
+        text-transform: uppercase;
+        letter-spacing: 7px;
+        padding: 10px;
+    }
+
+    .skillsIcons {
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        z-index: 5;
+        padding: 0px;
+    }
+
+    .icon {
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        opacity: 0;
+    }
+
+    .icon i {
+        padding: 20px;
+        font-size: 6em;
+    }
+
+    .icon p {
+        padding: 20px;
+        font-size: 1em;
+        width: 100%;
+        text-transform: uppercase;
+        color: #555;
+    }
+
+    .icon p span {
+        font-size: 1em;
+        font-weight: bold;
+        color: white;
+        text-shadow: 1px 1px 1px black;
+    }
+
+    /*ATTITUDE SECTION*/
+    .attitude {
+        width: 100%;
+        background: #1a1e22;
+        height: auto;
+        color: #555;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .attitudeTitle {
+        color: white;
+    }
+
+    .options {
+        height: auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .versatile {
+        width: 100%;
+        height: 100%;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: 2s all;
+    }
+
+    .versatile span {
+        color: white;
+    }
+
+    .versatile h2 {
+        text-transform: uppercase;
+        letter-spacing: 7px;
+        font-size: 1em;
+    }
+
+    .versatile p {
+        text-transform: uppercase;
+        font-size: .7em;
+        margin-top: 20px;
+        letter-spacing: 7px;
+        color: white;
+    }
+
+    .proactive {
+        width: 100%;
+        height: 100%;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: 2s all;
+    }
+
+    .proactive span {
+        color: white;
+    }
+
+    .proactive h2 {
+        text-transform: uppercase;
+        letter-spacing: 7px;
+        font-size: 1em;
+
+    }
+
+    .proactive p {
+        text-transform: uppercase;
+        font-size: .7em;
+        margin-top: 20px;
+        color: white;
+        letter-spacing: 7px;
+    }
+
+    .loadMore {
+        margin-top: 50px;
+        display: flex;
+        padding: 10px;
+        cursor: pointer;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+    }
+
+    .loadMore:hover i {
+        transition: 1s all;
+        transform: rotate(180deg);
+        color: white;
+    }
+
+    .loadMore i {
+        font-size: 2em;
+        transition: 1s all;
+    }
+
+    .attitudeQuote {
+        display: flex;
+        width: 100%;
+        margin-top: 20px;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: auto;
+        font-size: .8em;
+        display: none;
+    }
+
+    .attitudeQuoteVisible {
+        display: visible;
+    }
+
+    .attitudeQuote p {
+        line-height: 30px;
+        font-size: .7em;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    .attitudeQuote p:last-child {
+        font-size: .5em;
+        color: #555;
+    }
+
+    .proactiveFadeIn {
+        transition: 2s all;
+    }
+
+    /*EDUCATION SECTION*/
+    .education {
+        width: 100%;
+        background: #1a1e22;
+        height: auto;
+        color: white;
+        display: flex;
+        z-index: 101;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        transition: .3s all;
+    }
+
+    .educationFadeIn {
+        background: #191c1e;
+        transition: 3s all;
+        box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, .5);
+    }
+
+    .educationInfo {
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 80%;
+        color: #555;
+        height: auto;
+        line-height: 30px;
+        text-align: justify;
+        opacity: 0;
+        transition: 3s all;
+    }
+
+    .educationInfo span {
+        color: white;
+    }
+
+    .endingLine {
+        height: 5px;
+        border-bottom: 2px solid;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        width: 30%;
+    }
+
+    /*MEDIA SECTION*/
+    .media {
+        height: auto;
+        width: 100%;
+        display: flex;
+        background: white;
+        justify-content: center;
+        align-items: center;
+        color: #191c1e;
+        z-index: 100;
+        flex-direction: column;
+        box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, .5);
+    }
+
+    .mediaDivs {
+        height: 100%;
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #191c1e;
+        z-index: 100;
+        flex-direction: row;
+    }
+
+    .social {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 33.3%;
+        padding: 30px;
+    }
+
+    .social i {
+        font-size: 2em;
+        cursor: pointer;
+        color: black;
+    }
+
+    .additionalInfo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .additionalInfo p:nth-child(1) {
+        padding: 10px;
+        font-size: .8em;
+        color: black;
+    }
+
+    .additionalInfo p:nth-child(1) span:nth-child(1) {
+        text-decoration: line-through;
+    }
+
+    .additionalInfo p:nth-child(1) span:nth-child(2) {
+        font-weight: bold;
+    }
+
+    .additionalInfo p:nth-child(2) {
+        padding-bottom: 20px;
+        font-size: .5em;
+        color: #555;
+    }
+
+    /*TESTIMONIALS*/
+    .testimonialsSection {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #1a1e22;
+        flex-direction: column;
+        padding: 20px
+    }
+
+    .flickity-viewport {
+        min-height: 360px !important;
+    }
+
+    .testimonialsSection .carousel {
+        width: 100%;
+        min-height: 360px;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .testimonialsSection .carousel .flickity-page-dots {
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        color: white;
+    }
+
+    .testimonialsSection .carousel .carousel-cell {
+        display: flex;
+        height: auto;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        line-height: 30px;
+    }
+
+    .testimonialsSection .carousel .carousel-cell .testimonialName {
+        display: flex;
+        justify-content: flex-start;
+        width: 90%;
+        padding: 10px;
+        font-weight: bold;
+        color: #555;
+        font-size: .9em;
+    }
+
+    .testimonialsSection .carousel .carousel-cell .testimonialMessage {
+        padding: 10px;
+        width: 90%;
+        height: 80%;
+        margin-top: 40px;
+        text-align: justify;
+        color: white;
+    }
+
+    .testimonialsSection .carousel .carousel-cell .testimonialBusiness {
+        display: flex;
+        padding: 10px;
+        width: 90%;
+        height: 50px;
+        font-size: .9em;
+        justify-content: flex-end;
+        font-weight: bold;
+        font-size: 0.8em;
+        color: #555;
+    }
+
+    .testimonialsSection .carousel .carousel-cell:nth-child(1) {
+        width: 100%;
+        height: 100%;
+        margin-right: 10px;
+        border-radius: 5px;
+    }
+
+    .testimonialsSection .carousel .carousel-cell:nth-child(2) {
+        height: 100%;
+        width: 100%;
+        margin-right: 10px;
+    }
+
+    .testimonialsSection .carousel .carousel-cell:nth-child(3) {
+        height: 100%;
+        width: 100%;
+        margin-right: 10px;
+    }
+
+    .testimonialsSection .carousel .carousel-cell:nth-child(4) {
+        height: 100%;
+        width: 100%;
+        margin-right: 10px;
+    }
+
+    .testimonialsSection .carousel .carousel-cell:nth-child(5) {
+        height: 100%;
+        width: 100%;
+        margin-right: 10px;
+    }
+
+    .testimonialsSection h2 {
+        position: absolute;
+        z-index: 1;
+        letter-spacing: 15px;
+        font-size: 2em;
+        color: rgba(255, 255, 255, 0.05);
+    }
+
+}
+
+/*----------------------------------------------------------------------------------*/
+
+/*RESPONSIVE from 820px to 1670px*/
+
+@media only screen and (min-width:820px) {
+
+    /*ABOUT SECTION*/
+    body {
+        overflow-x: hidden;
+    }
+
+    .aboutSection {
+        width: 100%;
+        background: #191c1e;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /*ABOUT ME SECTION*/
+    .parallax-mirror {
+        width: 100%;
+        transform: translate3d(none);
+        height: 100vh;
+    }
+
+    .parallax-slider {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+    }
+
+    .aboutName {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .myName {
+        width: 100%;
+        height: 80%;
+        background: #191c1e;
+        color: white;
+        display: flex;
+        /*    padding-left: 100px;*/
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border-bottom: 1px solid #555;
+    }
+
+    #particles-js {
+        width: 100%;
+        height: 30%;
+    }
+
+    .myName p {
+        width: 80%;
+        font-size: 2.5em;
+        color: #555;
+    }
+
+    .myName p:nth-child(2) {
+        font-size: 3.5em;
+        text-shadow: 1px 1px 1px white;
+        text-transform: uppercase;
+        color: white;
+    }
+
+    .myName span {
+        text-decoration: line-through;
+    }
+
+    .myName span:last-child {
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: white;
+        text-shadow: 1px 1px 1px white;
+    }
+
+    /*LENGUAGES SECTION*/
+    .lenguages {
+        background: #1a1e22;
+        /*    background: red;*/
+        background-attachment: fixed;
+        height: auto;
+        padding: 50px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        z-index: 100;
+        box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, .2);
+    }
+
+    .socratisQuote {
+        color: #555;
+        width: 50%;
+        padding: 30px;
+        font-size: 1.5em;
+        line-height: 30px;
+        opacity: 0;
+        transition: 1.2s all;
+        transform: translateY(50px);
+    }
+
+    .socratisQuoteFadeIn {
+        opacity: 1;
+        transition: 1.2s all;
+        transform: translateY(0px);
+    }
+
+    .socratis {
+        color: rgba(85, 85, 85, .05);
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        letter-spacing: 20px;
+        position: absolute;
+        text-transform: uppercase;
+        z-index: 2;
+    }
+
+    .socratis p {
+        font-size: 19em;
+        color: rgba(85, 85, 85, .05);
+        font-style: italic;
+    }
+
+    .lenguages p span {
+        color: white;
+        text-decoration: line-through;
+    }
+
+    .allLenguages {
+        width: 70%;
+        padding: 50px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        z-index: 3;
+    }
+
+    .allLenguages div {
+        width: 33.3%;
+        height: 200px;
+        padding: 30px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .allLenguages div i {
+        font-size: 3em;
+        color: #555;
+        transition: .5s all;
+        z-index: 2;
+    }
+
+    .allLenguages div p {
+        font-size: 1em;
+        color: rgba(255, 255, 255, .1);
+        margin-top: 20px;
+        z-index: 1;
+        font-size: 1em;
+        opacity: 0;
+        font-weight: bold;
+        letter-spacing: 10px;
+        /*    position: absolute;*/
+        text-transform: uppercase;
+        transition: .5s all;
+        display: none;
+    }
+
+    .lenguageopacity {
+        opacity: 1;
+        transition: .5s all;
+    }
+
+    .allLenguages div:hover i {
+        color: white;
+        transition: .5s all;
+
+    }
+
+    /*SKILLS SECTION*/
+    .skills {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: #1a1e22;
+        color: white;
+        z-index: 101;
+        transition: 3s all;
+    }
+
+    .skillsFadeIn {
+        background: #191c1e;
+        transition: 3s all;
+        box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, .5);
+    }
+
+    .skillsTitle {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        padding-top: 40px;
+    }
+
+    .skillsTitle h2 {
+        font-size: 4em;
+        text-transform: uppercase;
+        letter-spacing: 30px;
+        padding: 10px;
+        font-weight: 100;
+        text-shadow: 1px 1px 1px white;
+    }
+
+    .skillsTitle p {
+        font-size: .6em;
+        text-transform: uppercase;
+        letter-spacing: 7px;
+        padding: 10px;
+    }
+
+    .skillsIcons {
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        align-items: center;
+        height: auto;
+        z-index: 5;
+        padding: 0px;
+    }
+
+    .icon {
+        width: 33.3%;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        opacity: 0;
+    }
+
+    .icon i {
+        padding: 20px;
+        font-size: 6em;
+    }
+
+    .icon p {
+        padding: 20px;
+        font-size: 1em;
+        display: flex;
+        text-transform: uppercase;
+        color: #555;
+    }
+
+    .icon p span {
+        font-size: 1em;
+        font-weight: bold;
+        color: white;
+        text-shadow: 1px 1px 1px black;
+    }
+
+    /*ATTITUDE SECTION*/
+    .attitude {
+        width: 100%;
+        background: #1a1e22;
+        height: auto;
+        color: #555;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .attitudeTitle {
+        color: white;
+    }
+
+    .options {
+        height: auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .versatile {
+        width: 100%;
+        height: 100%;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: 2s all;
+    }
+
+    .versatile span {
+        color: white;
+    }
+
+    .versatile h2 {
+        text-transform: uppercase;
+        letter-spacing: 7px;
+    }
+
+    .versatile p {
+        text-transform: uppercase;
+        font-size: .8em;
+        margin-top: 20px;
+        letter-spacing: 7px;
+        color: white;
+    }
+
+    .proactive {
+        width: 100%;
+        height: 100%;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: 2s all;
+    }
+
+    .proactive span {
+        color: white;
+    }
+
+    .proactive h2 {
+        text-transform: uppercase;
+        letter-spacing: 7px;
+    }
+
+    .proactive p {
+        text-transform: uppercase;
+        font-size: .8em;
+        margin-top: 20px;
+        color: white;
+        letter-spacing: 7px;
+    }
+
+    .loadMore {
+        margin-top: 50px;
+        display: flex;
+        padding: 10px;
+        cursor: pointer;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+    }
+
+    .loadMore:hover i {
+        transition: 1s all;
+        transform: rotate(180deg);
+        color: white;
+    }
+
+    .loadMore i {
+        font-size: 2em;
+        transition: 1s all;
+    }
+
+    .attitudeQuote {
+        display: flex;
+        width: 80%;
+        margin-top: 20px;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 150px;
+        display: none;
+    }
+
+    .attitudeQuoteVisible {
+        display: visible;
+    }
+
+    .attitudeQuote p {
+        line-height: 30px;
+        font-size: .7em;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    .attitudeQuote p:last-child {
+        font-size: .5em;
+        color: #555;
+    }
+
+    .proactiveFadeIn {
+        transition: 2s all;
+    }
+
+    /*EDUCATION SECTION*/
+    .education {
+        width: 100%;
+        background: #1a1e22;
+        height: 60vh;
+        color: white;
+        display: flex;
+        z-index: 101;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        transition: .3s all;
+    }
+
+    .educationFadeIn {
+        background: #191c1e;
+        transition: 3s all;
+        box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, .5);
+    }
+
+    .educationInfo {
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 80%;
+        color: #555;
+        line-height: 30px;
+        text-align: justify;
+        opacity: 0;
+        transition: 3s all;
+    }
+
+    .educationInfo span {
+        color: white;
+    }
+
+    .endingLine {
+        height: 5px;
+        border-bottom: 2px solid;
+        margin-top: 50px;
+        width: 10%;
+    }
+
+    /*MEDIA SECTION*/
+    .media {
+        height: 300px;
+        width: 100%;
+        display: flex;
+        background: white;
+        justify-content: center;
+        align-items: center;
+        color: #191c1e;
+        z-index: 100;
+        flex-direction: column;
+        box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, .5);
+    }
+
+    .mediaDivs {
+        height: 100%;
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #191c1e;
+        z-index: 100;
+        flex-direction: row;
+    }
+
+    .social {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 33.3%;
+        padding: 30px;
+    }
+
+    .social i {
+        font-size: 2em;
+        cursor: pointer;
+        color: black;
+    }
+
+    .additionalInfo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .additionalInfo p:nth-child(1) {
+        padding: 10px;
+        font-size: .8em;
+        color: black;
+    }
+
+    .additionalInfo p:nth-child(1) span:nth-child(1) {
+        text-decoration: line-through;
+    }
+
+    .additionalInfo p:nth-child(1) span:nth-child(2) {
+        font-weight: bold;
+    }
+
+    .additionalInfo p:nth-child(2) {
+        padding-bottom: 20px;
+        font-size: .5em;
+        color: #555;
+    }
+
+    /*TESTIMONIALS*/
+    .testimonialsSection {
+        width: 100%;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #1a1e22;
+        flex-direction: column;
+    }
+
+    .testimonialsSection .carousel {
+        width: 90%;
+        height: 100%;
+        z-index: 2;
+    }
+
+    .testimonialsSection .carousel .flickity-page-dots {
+        height: 50px;
+        color: white;
+    }
+
+    .testimonialsSection .carousel .carousel-cell {
+        display: flex;
+        height: 0%;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        line-height: 30px;
+    }
+
+    .testimonialsSection .carousel .carousel-cell .testimonialName {
+        display: flex;
+        justify-content: flex-start;
+        width: 90%;
+        padding: 10px;
+        font-weight: bold;
+        color: #555;
+    }
+
+    .testimonialsSection .carousel .carousel-cell .testimonialMessage {
+        padding: 10px;
+        width: 90%;
+        text-align: justify;
+        color: white;
+    }
+
+    .testimonialsSection .carousel .carousel-cell .testimonialBusiness {
+        display: flex;
+        padding: 10px;
+        width: 90%;
+        justify-content: flex-end;
+        font-weight: bold;
+        font-size: 0.8em;
+        color: #555;
+    }
+
+    .testimonialsSection .carousel .carousel-cell:nth-child(1) {
+        width: 100%;
+        height: 100%;
+        margin-right: 10px;
+        border-radius: 5px;
+    }
+
+    .testimonialsSection .carousel .carousel-cell:nth-child(2) {
+        height: 100%;
+        width: 100%;
+        margin-right: 10px;
+    }
+
+    .testimonialsSection .carousel .carousel-cell:nth-child(3) {
+        height: 100%;
+        width: 100%;
+        margin-right: 10px;
+    }
+
+    .testimonialsSection .carousel .carousel-cell:nth-child(4) {
+        height: 100%;
+        width: 100%;
+        margin-right: 10px;
+    }
+
+    .testimonialsSection .carousel .carousel-cell:nth-child(5) {
+        height: 100%;
+        width: 100%;
+        margin-right: 10px;
+    }
+
+    .testimonialsSection h2 {
+        position: absolute;
+        z-index: 1;
+        letter-spacing: 15px;
+        font-size: 5em;
+        color: rgba(255, 255, 255, 0.05);
+    }
+
+}
+
+/*----------------------------------------------------------------------------------*/
+
+/*RESPONSIVE from 1400px to 1670px*/
+
+@media only screen and (min-width:1400px) {
+
+    /*ABOUT SECTION*/
+    .aboutSection {
+        width: 100%;
+        background: #191c1e;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /*ABOUT ME SECTION*/
+    .parallax-mirror {
+        width: 100%;
+        transform: translate3d(none);
+        height: 100vh;
+    }
+
+    .parallax-slider {
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+        width: 100%;
+    }
+
+    .aboutName {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .myName {
+        width: 70%;
+        height: 100%;
+        background: #191c1e;
+        color: white;
+        display: flex;
+        padding-left: 100px;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        border-right: 1px solid #555;
+    }
+
+    #particles-js {
+        width: 30%;
+        height: 100%;
+    }
+
+    .myName p {
+        width: 100%;
+        font-size: 2em;
+        color: #555;
+    }
+
+    .myName p:nth-child(2) {
+        font-size: 4em;
+        text-shadow: 1px 1px 1px white;
+        text-transform: uppercase;
+        color: white;
+    }
+
+    .myName span {
+        text-decoration: line-through;
+    }
+
+    .myName span:last-child {
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: white;
+        text-shadow: 1px 1px 1px white;
+    }
+
+    /*LENGUAGES SECTION*/
+    .lenguages {
+        background: #1a1e22;
+        /*    background: red;*/
+        background-attachment: fixed;
+        height: auto;
+        padding: 50px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        z-index: 100;
+        box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, .2);
+    }
+
+    .socratisQuote {
+        color: #555;
+        width: 50%;
+        padding: 30px;
+        line-height: 60px;
+        font-size: 2em;
+        opacity: 0;
+        transition: 1.2s all;
+        transform: translateY(50px);
+    }
+
+    .socratisQuoteFadeIn {
+        opacity: 1;
+        transition: 1.2s all;
+        transform: translateY(0px);
+    }
+
+    .socratis {
+        color: rgba(85, 85, 85, .05);
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        letter-spacing: 20px;
+        position: absolute;
+        text-transform: uppercase;
+        z-index: 2;
+    }
+
+    .socratis p {
+        font-size: 19em;
+        color: rgba(85, 85, 85, .05);
+        font-style: italic;
+    }
+
+    .lenguages p span {
+        color: white;
+        text-decoration: line-through;
+    }
+
+    .allLenguages {
+        width: 70%;
+        padding: 50px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        z-index: 3;
+    }
+
+    .allLenguages div {
+        width: 33.3%;
+        height: 200px;
+        padding: 30px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .allLenguages div i {
+        font-size: 3em;
+        color: #555;
+        transition: .5s all;
+        z-index: 2;
+    }
+
+    .allLenguages div p {
+        font-size: .8em;
+        color: rgba(255, 255, 255, .1);
+        margin-top: 20px;
+        z-index: 1;
+        font-size: 1em;
+        opacity: 0;
+        font-weight: bold;
+        letter-spacing: 10px;
+        /*    position: absolute;*/
+        text-transform: uppercase;
+        transition: .5s all;
+        display: flex;
+    }
+
+    .lenguageopacity {
+        opacity: 1;
+        transition: .5s all;
+    }
+
+    .allLenguages div:hover i {
+        color: white;
+        transition: .5s all;
+
+    }
+
+    /*SKILLS SECTION*/
+    .skills {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: #1a1e22;
+        color: white;
+        z-index: 101;
+        transition: 3s all;
+    }
+
+    .skillsFadeIn {
+        background: #191c1e;
+        transition: 3s all;
+        box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, .5);
+    }
+
+    .skillsTitle {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        padding-top: 40px;
+    }
+
+    .skillsTitle h2 {
+        font-size: 4em;
+        text-transform: uppercase;
+        letter-spacing: 60px;
+        padding: 10px;
+        font-weight: 100;
+        text-shadow: 1px 1px 1px white;
+    }
+
+    .skillsTitle p {
+        font-size: .6em;
+        text-transform: uppercase;
+        letter-spacing: 7px;
+        padding: 10px;
+    }
+
+    .skillsIcons {
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        align-items: center;
+        height: auto;
+        z-index: 5;
+        padding: 0px;
+    }
+
+    .icon {
+        width: 33.3%;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        opacity: 0;
+    }
+
+    .icon i {
+        padding: 20px;
+        font-size: 6em;
+    }
+
+    .icon p {
+        padding: 20px;
+        font-size: 1em;
+        text-transform: uppercase;
+        color: #555;
+    }
+
+    .icon p span {
+        font-size: 1em;
+        font-weight: bold;
+        color: white;
+        text-shadow: 1px 1px 1px black;
+    }
+
+    /*ATTITUDE SECTION*/
+    .attitude {
+        width: 100%;
+        background: #1a1e22;
+        height: auto;
+        color: #555;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .attitudeTitle {
+        color: white;
+    }
+
+    .options {
+        height: 500px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .versatile {
+        width: 50%;
+        height: 100%;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: 2s all;
+    }
+
+    .versatile span {
+        color: white;
+    }
+
+    .versatile h2 {
+        text-transform: uppercase;
+        letter-spacing: 7px;
+    }
+
+    .versatile p {
+        text-transform: uppercase;
+        font-size: .8em;
+        margin-top: 20px;
+        letter-spacing: 7px;
+        color: white;
+    }
+
+    .proactive {
+        width: 50%;
+        height: 100%;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: 2s all;
+    }
+
+    .proactive span {
+        color: white;
+    }
+
+    .proactive h2 {
+        text-transform: uppercase;
+        letter-spacing: 7px;
+    }
+
+    .proactive p {
+        text-transform: uppercase;
+        font-size: .8em;
+        margin-top: 20px;
+        color: white;
+        letter-spacing: 7px;
+    }
+
+    .loadMore {
+        margin-top: 50px;
+        display: flex;
+        padding: 10px;
+        cursor: pointer;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+    }
+
+    .loadMore:hover i {
+        transition: 1s all;
+        transform: rotate(180deg);
+        color: white;
+    }
+
+    .loadMore i {
+        font-size: 2em;
+        transition: 1s all;
+    }
+
+    .attitudeQuote {
+        display: flex;
+        width: 80%;
+        margin-top: 20px;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 150px;
+        display: none;
+    }
+
+    .attitudeQuoteVisible {
+        display: visible;
+    }
+
+    .attitudeQuote p {
+        line-height: 30px;
+        font-size: .7em;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    .attitudeQuote p:last-child {
+        font-size: .5em;
+        color: #555;
+    }
+
+    .proactiveFadeIn {
+        transition: 2s all;
+    }
+
+    /*EDUCATION SECTION*/
+    .education {
+        width: 100%;
+        background: #1a1e22;
+        height: 60vh;
+        color: white;
+        display: flex;
+        z-index: 101;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        transition: .3s all;
+    }
+
+    .educationFadeIn {
+        background: #191c1e;
+        transition: 3s all;
+        box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, .5);
+    }
+
+    .educationInfo {
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 60%;
+        color: #555;
+        line-height: 30px;
+        text-align: justify;
+        opacity: 0;
+        transition: 3s all;
+    }
+
+    .educationInfo span {
+        color: white;
+    }
+
+    .endingLine {
+        height: 5px;
+        border-bottom: 2px solid;
+        margin-top: 50px;
+        width: 10%;
+    }
+
+    /*MEDIA SECTION*/
+    .media {
+        height: 300px;
+        width: 100%;
+        display: flex;
+        background: white;
+        justify-content: center;
+        align-items: center;
+        color: #191c1e;
+        z-index: 100;
+        flex-direction: column;
+        box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, .5);
+    }
+
+    .mediaDivs {
+        height: 100%;
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #191c1e;
+        z-index: 100;
+        flex-direction: row;
+    }
+
+    .social {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 33.3%;
+        padding: 30px;
+    }
+
+    .social i {
+        font-size: 2em;
+        cursor: pointer;
+        color: black;
+    }
+
+    .additionalInfo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 30%;
+    }
+
+    .additionalInfo p:nth-child(1) {
+        padding: 10px;
+        font-size: .8em;
+        color: black;
+    }
+
+    .additionalInfo p:nth-child(1) span:nth-child(1) {
+        text-decoration: line-through;
+    }
+
+    .additionalInfo p:nth-child(1) span:nth-child(2) {
+        font-weight: bold;
+    }
+
+    .additionalInfo p:nth-child(2) {
+        padding-bottom: 20px;
+        font-size: .5em;
+        color: #555;
+    }
+
+    /*TESTIMONIALS*/
+    .testimonialsSection {
+        width: 100%;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #1a1e22;
+        flex-direction: column;
+    }
+
+    .testimonialsSection .carousel {
+        width: 70%;
+        height: 100%;
+        z-index: 2;
+    }
+
+    .testimonialsSection .carousel .flickity-page-dots {
+        height: 50px;
+        color: white;
+    }
+
+    .testimonialsSection .carousel .carousel-cell {
+        display: flex;
+        height: 0%;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        line-height: 30px;
+    }
+
+    .testimonialsSection .carousel .carousel-cell .testimonialName {
+        display: flex;
+        justify-content: flex-start;
+        width: 90%;
+        padding: 10px;
+        font-weight: bold;
+        color: #555;
+    }
+
+    .testimonialsSection .carousel .carousel-cell .testimonialMessage {
+        padding: 10px;
+        width: 90%;
+        text-align: justify;
+        color: white;
+    }
+
+    .testimonialsSection .carousel .carousel-cell .testimonialBusiness {
+        display: flex;
+        padding: 10px;
+        width: 90%;
+        justify-content: flex-end;
+        font-weight: bold;
+        font-size: 0.8em;
+        color: #555;
+    }
+
+    .testimonialsSection .carousel .carousel-cell:nth-child(1) {
+        width: 100%;
+        height: 100%;
+        margin-right: 10px;
+        border-radius: 5px;
+    }
+
+    .testimonialsSection .carousel .carousel-cell:nth-child(2) {
+        height: 100%;
+        width: 100%;
+        margin-right: 10px;
+    }
+
+    .testimonialsSection .carousel .carousel-cell:nth-child(3) {
+        height: 100%;
+        width: 100%;
+        margin-right: 10px;
+    }
+
+    .testimonialsSection .carousel .carousel-cell:nth-child(4) {
+        height: 100%;
+        width: 100%;
+        margin-right: 10px;
+    }
+
+    .testimonialsSection .carousel .carousel-cell:nth-child(5) {
+        height: 100%;
+        width: 100%;
+        margin-right: 10px;
+    }
+
+    .testimonialsSection h2 {
+        position: absolute;
+        z-index: 1;
+        letter-spacing: 15px;
+        font-size: 5em;
+        color: rgba(255, 255, 255, 0.05);
+    }
+
+}
+
+/*----------------------------------------------------------------------------------*/
+
+/*RESPONSIVE from 1670px*/
+
+@media only screen and (min-width:1670px) {
+    
+    /*ABOUT SECTION*/
+    .aboutSection {
+        width: 100%;
+        background: #191c1e;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    /*ABOUT ME SECTION*/
+    .parallax-mirror {
+        width: 100%;
+        transform: translate3d(none);
+        height: 100vh;
+    }
+
+    .parallax-slider {
+        display: flex;
+        height: 100%;
+        width: 100%;
+    }
+
+    .aboutName {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .myName {
+        width: 70%;
+        height: 100%;
+        background: #191c1e;
+        color: white;
+        display: flex;
+        padding-left: 100px;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        border-right: 1px solid #555;
+    }
+
+    #particles-js {
+        width: 30%;
+        height: 100%;
+    }
+
+    .myName p {
+        width: 80%;
+        font-size: 3em;
+        color: #555;
+    }
+
+    .myName p:nth-child(2) {
+        font-size: 5em;
+        text-shadow: 1px 1px 1px white;
+        text-transform: uppercase;
+        color: white;
+    }
+
+    .myName span {
+        text-decoration: line-through;
+    }
+
+    .myName span:last-child {
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: white;
+        text-shadow: 1px 1px 1px white;
+    }
+
+    /*LENGUAGES SECTION*/
+    .lenguages {
+        background: #1a1e22;
+        background-attachment: fixed;
+        height: auto;
+        padding: 50px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        z-index: 100;
+        box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, .2);
+    }
+
+    .socratisQuote {
+        color: #555;
+        width: 50%;
+        padding: 30px;
+        font-size: 3em;
+        opacity: 0;
+        transition: 1.2s all;
+        transform: translateY(50px);
+    }
+
+    .socratisQuoteFadeIn {
+        opacity: 1;
+        transition: 1.2s all;
+        transform: translateY(0px);
+    }
+
+    .socratis {
+        color: rgba(85, 85, 85, .05);
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        letter-spacing: 20px;
+        position: absolute;
+        text-transform: uppercase;
+        z-index: 2;
+    }
+
+    .socratis p {
+        font-size: 24em;
+        color: rgba(85, 85, 85, .05);
+        font-style: italic;
+    }
+
+    .lenguages p span {
+        color: white;
+        text-decoration: line-through;
+    }
+
+    .allLenguages {
+        width: 70%;
+        padding: 50px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        z-index: 3;
+    }
+
+    .allLenguages div {
+        width: 33.3%;
+        height: 200px;
+        padding: 30px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .allLenguages div i {
+        font-size: 3em;
+        color: #555;
+        transition: .5s all;
+        z-index: 2;
+    }
+
+    .allLenguages div p {
+        font-size: 1em;
+        color: rgba(255, 255, 255, .1);
+        margin-top: 20px;
+        z-index: 1;
+        font-size: 1.5em;
+        opacity: 0;
+        font-weight: bold;
+        letter-spacing: 10px;
+        /*    position: absolute;*/
+        text-transform: uppercase;
+        transition: .5s all;
+    }
+
+    .lenguageopacity {
+        opacity: 1;
+        transition: .5s all;
+    }
+
+    .allLenguages div:hover i {
+        color: white;
+        transition: .5s all;
+
+    }
+
+    /*SKILLS SECTION*/
+    .skills {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: #1a1e22;
+        color: white;
+        z-index: 101;
+        transition: 3s all;
+    }
+
+    .skillsFadeIn {
+        background: #191c1e;
+        transition: 3s all;
+        box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, .5);
+    }
+
+    .skillsTitle {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        padding-top: 40px;
+    }
+
+    .skillsTitle h2 {
+        font-size: 4em;
+        text-transform: uppercase;
+        letter-spacing: 60px;
+        padding: 10px;
+        font-weight: 100;
+        text-shadow: 1px 1px 1px white;
+    }
+
+    .skillsTitle p {
+        font-size: .6em;
+        text-transform: uppercase;
+        letter-spacing: 7px;
+        padding: 10px;
+    }
+
+    .skillsIcons {
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        align-items: center;
+        height: auto;
+        z-index: 5;
+        padding: 0px;
+    }
+
+    .icon {
+        width: 33.3%;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        opacity: 0;
+    }
+
+    .icon i {
+        padding: 20px;
+        font-size: 6em;
+    }
+
+    .icon p {
+        padding: 20px;
+        font-size: 1em;
+        text-transform: uppercase;
+        color: #555;
+    }
+
+    .icon p span {
+        font-size: 1em;
+        font-weight: bold;
+        color: white;
+        text-shadow: 1px 1px 1px black;
+    }
+
+    /*ATTITUDE SECTION*/
+    .attitude {
+        width: 100%;
+        background: #1a1e22;
+        height: auto;
+        color: #555;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .attitudeTitle {
+        color: white;
+    }
+
+    .options {
+        height: 500px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .versatile {
+        width: 50%;
+        height: 100%;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: 2s all;
+    }
+
+    .versatile span {
+        color: white;
+    }
+
+    .versatile h2 {
+        text-transform: uppercase;
+        letter-spacing: 7px;
+    }
+
+    .versatile p {
+        text-transform: uppercase;
+        font-size: .8em;
+        margin-top: 20px;
+        letter-spacing: 7px;
+        color: white;
+    }
+
+    .proactive {
+        width: 50%;
+        height: 100%;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: 2s all;
+    }
+
+    .proactive span {
+        color: white;
+    }
+
+    .proactive h2 {
+        text-transform: uppercase;
+        letter-spacing: 7px;
+    }
+
+    .proactive p {
+        text-transform: uppercase;
+        font-size: .8em;
+        margin-top: 20px;
+        color: white;
+        letter-spacing: 7px;
+    }
+
+    .loadMore {
+        margin-top: 50px;
+        display: flex;
+        padding: 10px;
+        cursor: pointer;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+    }
+
+    .loadMore:hover i {
+        transition: 1s all;
+        transform: rotate(180deg);
+        color: white;
+    }
+
+    .loadMore i {
+        font-size: 2em;
+        transition: 1s all;
+    }
+
+    .attitudeQuote {
+        display: flex;
+        width: 80%;
+        margin-top: 20px;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 150px;
+        display: none;
+    }
+
+    .attitudeQuoteVisible {
+        display: visible;
+    }
+
+    .attitudeQuote p {
+        line-height: 30px;
+        font-size: .7em;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    .attitudeQuote p:last-child {
+        font-size: .5em;
+        color: #555;
+    }
+
+    .proactiveFadeIn {
+        transition: 2s all;
+    }
+
+    /*EDUCATION SECTION*/
+    .education {
+        width: 100%;
+        background: #1a1e22;
+        height: 60vh;
+        color: white;
+        display: flex;
+        z-index: 101;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        transition: .3s all;
+    }
+
+    .educationFadeIn {
+        background: #191c1e;
+        transition: 3s all;
+        box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, .5);
+    }
+
+    .educationInfo {
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 50%;
+        color: #555;
+        line-height: 30px;
+        text-align: justify;
+        opacity: 0;
+        transition: 3s all;
+    }
+
+    .educationInfo span {
+        color: white;
+    }
+
+    .endingLine {
+        height: 5px;
+        border-bottom: 2px solid;
+        margin-top: 50px;
+        width: 10%;
+    }
+
+    /*MEDIA SECTION*/
+    .media {
+        height: 300px;
+        width: 100%;
+        display: flex;
+        background: white;
+        justify-content: center;
+        align-items: center;
+        color: #191c1e;
+        z-index: 100;
+        flex-direction: column;
+        box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, .5);
+    }
+
+    .mediaDivs {
+        height: 100%;
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #191c1e;
+        z-index: 100;
+        flex-direction: row;
+    }
+
+    .social {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 33.3%;
+        padding: 30px;
+    }
+
+    .social i {
+        font-size: 2em;
+        cursor: pointer;
+        color: black;
+    }
+
+    .additionalInfo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 30%;
+    }
+
+    .additionalInfo p:nth-child(1) {
+        padding: 10px;
+        font-size: .8em;
+        color: black;
+    }
+
+    .additionalInfo p:nth-child(1) span:nth-child(1) {
+        text-decoration: line-through;
+    }
+
+    .additionalInfo p:nth-child(1) span:nth-child(2) {
+        font-weight: bold;
+    }
+
+    .additionalInfo p:nth-child(2) {
+        padding-bottom: 20px;
+        font-size: .5em;
+        color: #555;
+    }
+
+    /*TESTIMONIALS*/
+    .testimonialsSection {
+        width: 100%;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #1a1e22;
+        flex-direction: column;
+    }
+
+    .testimonialsSection .carousel {
+        width: 70%;
+        height: 100%;
+        z-index: 2;
+    }
+
+    .testimonialsSection .carousel .flickity-page-dots {
+        height: 50px;
+        color: white;
+    }
+
+    .testimonialsSection .carousel .carousel-cell {
+        display: flex;
+        height: 0%;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        line-height: 30px;
+    }
+
+    .testimonialsSection .carousel .carousel-cell .testimonialName {
+        display: flex;
+        justify-content: flex-start;
+        width: 70%;
+        padding: 10px;
+        font-weight: bold;
+        color: #555;
+    }
+
+    .testimonialsSection .carousel .carousel-cell .testimonialMessage {
+        padding: 10px;
+        width: 70%;
+        text-align: justify;
+        color: white;
+    }
+
+    .testimonialsSection .carousel .carousel-cell .testimonialBusiness {
+        display: flex;
+        padding: 10px;
+        width: 70%;
+        justify-content: flex-end;
+        font-weight: bold;
+        font-size: 0.8em;
+        color: #555;
+    }
+
+    .testimonialsSection .carousel .carousel-cell:nth-child(1) {
+        width: 100%;
+        height: 100%;
+        margin-right: 10px;
+        border-radius: 5px;
+    }
+
+    .testimonialsSection .carousel .carousel-cell:nth-child(2) {
+        height: 100%;
+        width: 100%;
+        margin-right: 10px;
+    }
+
+    .testimonialsSection .carousel .carousel-cell:nth-child(3) {
+        height: 100%;
+        width: 100%;
+        margin-right: 10px;
+    }
+
+    .testimonialsSection .carousel .carousel-cell:nth-child(4) {
+        height: 100%;
+        width: 100%;
+        margin-right: 10px;
+    }
+
+    .testimonialsSection .carousel .carousel-cell:nth-child(5) {
+        height: 100%;
+        width: 100%;
+        margin-right: 10px;
+    }
+
+    .testimonialsSection h2 {
+        position: absolute;
+        z-index: 1;
+        letter-spacing: 15px;
+        font-size: 7em;
+        color: rgba(255, 255, 255, 0.05);
+    }
+
+}
